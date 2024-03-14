@@ -21,7 +21,6 @@ function Transfer({ privateKey, setBalance }) {
     let recoveryPublicKey = signature.recoverPublicKey(toHex(msgHash))
 
     let isValid = secp.secp256k1.verify(signature, toHex(msgHash), recoveryPublicKey.toHex())
-    console.log(isValid)
 
     const replacer = (key, value) => {
       if (typeof value === "bigint") {
